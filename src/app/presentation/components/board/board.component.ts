@@ -7,7 +7,7 @@ import { SudokuService } from '../../../infrastructure/services/sudoku.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="w-full max-w-xl mx-auto p-1 bg-gray-900 rounded-xl shadow-2xl">
+    <div class="w-full max-w-xl mx-auto p-1 px-4 sm:px-6 bg-gray-900 rounded-xl shadow-2xl">
       <!-- Outer Border Container -->
       <div class="grid grid-cols-9 border-4 border-gray-900 bg-gray-300 dark:bg-gray-700">
         
