@@ -60,13 +60,13 @@ export class BoardComponent {
     // Right Border: Thicker on 3rd and 6th column
     if (c < 8) {
       if ((c + 1) % 3 === 0) classes += 'border-r-4 border-google-blue ';
-      else classes += 'border-r border-gray-400 dark:border-gray-600 ';
+      else classes += 'border-r border-google-blue ';
     }
 
     // Bottom Border: Thicker on 3rd and 6th row
     if (r < 8) {
       if ((r + 1) % 3 === 0) classes += 'border-b-4 border-google-blue ';
-      else classes += 'border-b border-gray-400 dark:border-gray-600 ';
+      else classes += 'border-b border-google-blue ';
     }
 
     // Colors & State

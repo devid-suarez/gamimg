@@ -11,10 +11,25 @@ import { Difficulty } from '../../../core/models/sudoku.model';
   standalone: true,
   imports: [CommonModule, BoardComponent, NumpadComponent, ThemeSwitcherComponent],
   template: `
-    <div class="flex flex-col items-center w-full max-w-lg mx-auto p-4 pb-20">
+    <div class="flex flex-col items-center w-full mx-auto p-1 sm:p-2">
       
-      <!-- Statistics & Controls Header -->
-      <div class="flex justify-between items-center w-full mb-4 px-2">
+      <!-- The Board -->
+      <app-board />
+
+      <!-- Controls -->
+      <app-numpad 
+        (numberSelected)="onNumberSelected($event)"
+        (clearSelected)="onClearSelected()"
+      />
+
+      <!-- New Game Button -->
+      <button (click)="confirmNewGame()"
+              class="mt-4 text-google-blue font-bold text-sm tracking-widest uppercase hover:bg-blue-50 dark:hover:bg-gray-700 py-2 px-4 rounded-full transition-colors">
+        Nuevo Juego
+      </button>
+
+      <!-- Statistics & Controls Footer -->
+      <div class="flex justify-between items-center w-full mt-4 px-1">
         <div class="flex flex-col">
           <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Errores</span>
           <span class="text-xl font-mono" [class.text-google-red]="gameState().errors > 0">
@@ -35,21 +50,6 @@ import { Difficulty } from '../../../core/models/sudoku.model';
           <app-theme-switcher />
         </div>
       </div>
-
-      <!-- The Board -->
-      <app-board />
-
-      <!-- Controls -->
-      <app-numpad 
-        (numberSelected)="onNumberSelected($event)"
-        (clearSelected)="onClearSelected()"
-      />
-
-      <!-- New Game Button -->
-      <button (click)="confirmNewGame()"
-              class="mt-8 text-google-blue font-bold text-sm tracking-widest uppercase hover:bg-blue-50 dark:hover:bg-gray-700 py-3 px-6 rounded-full transition-colors">
-        Nuevo Juego
-      </button>
 
       <!-- Win Modal -->
       <div *ngIf="gameState().isComplete" 
