@@ -8,10 +8,6 @@ import { GameComponent } from './presentation/pages/game/game.component';
   imports: [CommonModule, GameComponent],
   template: `
     <div class="min-h-screen flex flex-col items-center p-2 sm:p-4 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-      <header class="mb-1 text-center">
-        <h1 class="text-xl sm:text-2xl font-bold text-google-blue">Sudoku Senior</h1>
-      </header>
-      
       <main class="w-full flex-1">
         <app-game />
       </main>

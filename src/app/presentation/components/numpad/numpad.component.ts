@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="grid grid-cols-5 gap-3 w-full max-w-xl mx-auto mt-2">
+    <div class="grid grid-cols-5 gap-3 w-full max-w-xl mx-auto mt-1">
       <!-- Keys 1-9 -->
       <button *ngFor="let num of [1,2,3,4,5,6,7,8,9]" 
               (click)="onNumberClick(num)"
